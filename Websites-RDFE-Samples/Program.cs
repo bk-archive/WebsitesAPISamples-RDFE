@@ -45,8 +45,7 @@ namespace Websites_RDFE_Samples
             var webHostingPlanSample = new RDFE_WebHostingPlan_Sample(resourceGroup, RDFEClient.client);
 
             //Initialize the Website Samples
-            //var websiteSample = new ARM_websites_Sample();
-            //websiteSample.client = ARMClient.client;
+            var websiteSample = new RDFE_WebSite_Sample(resourceGroup, RDFEClient.client);
 
             var operation = 0;
             var mainMenu = true;
@@ -75,7 +74,7 @@ namespace Websites_RDFE_Samples
                             var websiteMenu = true;
                             while (websiteMenu)
                             {
-                                //websiteMenu = websiteSample.webSitesOperations(resourceGroup);
+                                websiteMenu = websiteSample.WebSiteOperations();
                             }
                             break;
                         case 0:
