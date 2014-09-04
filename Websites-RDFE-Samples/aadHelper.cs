@@ -22,14 +22,14 @@ namespace Websites_RDFE_Samples
             client = new WebSiteManagementClient(cred);
         }
 
-        private string GetAuthorizationHeader(AzureActiveDirectoryConfig configguration)
+        private string GetAuthorizationHeader(AzureActiveDirectoryConfig configuration)
         {
             AuthenticationResult result = null;
 
-            var context = new AuthenticationContext("https://login.windows.net/" + configguration.addTenant);
+            var context = new AuthenticationContext("https://login.windows.net/" + configuration.addTenant);
 
             var thread = new Thread(
-                () => { result = context.AcquireToken(resource: configguration.aadResourceURI, clientId: configguration.addClientID, redirectUri: new Uri(configguration.aadRedirectURL), promptBehavior: PromptBehavior.Always); }
+                () => { result = context.AcquireToken(resource: configuration.aadResourceURI, clientId: configuration.addClientID, redirectUri: new Uri(configuration.aadRedirectURL), promptBehavior: PromptBehavior.Always); }
                 );
 
             thread.SetApartmentState(ApartmentState.STA);
