@@ -47,6 +47,8 @@ namespace Websites_RDFE_Samples
             //Initialize the Website Samples
             var websiteSample = new RDFE_WebSite_Sample(resourceGroup, RDFEClient.client);
 
+            var webjobSample = new RDFE_webjob_Sample();
+
             var operation = 0;
             var mainMenu = true;
 
@@ -56,6 +58,7 @@ namespace Websites_RDFE_Samples
                 Console.WriteLine("...::Select Samples::...");
                 Console.WriteLine("1) Web Hosting Plan Operations");
                 Console.WriteLine("2) Website Operations");
+                Console.WriteLine("3) Webjob Operations");
                 Console.WriteLine("0) Quit");
 
                 if (int.TryParse(Console.ReadLine(), out operation))
@@ -75,6 +78,13 @@ namespace Websites_RDFE_Samples
                             while (websiteMenu)
                             {
                                 websiteMenu = websiteSample.WebSiteOperations();
+                            }
+                            break;
+                        case 3:
+                            var webJobMenue = true;
+                            while (webJobMenue)
+                            {
+                                webJobMenue = webjobSample.WebJobOperations();
                             }
                             break;
                         case 0:
